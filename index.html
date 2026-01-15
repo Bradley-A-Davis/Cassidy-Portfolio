@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Basic page setup -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cassidy Portfolio</title>
+
+  <!-- Tailwind (no install needed) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  
+
+  <style>
+  .text-outline {
+  -webkit-text-stroke: 2px rgba(0,0,0,1);
+  paint-order: stroke fill;
+  
+}
+
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+  
+</head>
+
+<!--
+  Body notes:
+  - bg-gray-100: light background
+  - text-gray-900: dark text
+  - min-h-screen: ensures full height
+-->
+<body class="min-h-screen text-gray-900 bg-[linear-gradient(to_bottom,#FFE6EA,#D8BFD8)]">
+
+  <!-- =========================
+       1) HEADER BANNER (TOP)
+       ========================= -->
+  <header class="relative h-40 md:h-60 overflow-hidden flex items-center justify-center shadow-lg shadow-black/30">
+    <!-- Background image (crops dynamically) -->
+    <img
+        src="BackgroundHeader1.jpg"
+        alt=""
+        class="absolute inset-0 h-full w-full object-cover object-center"
+    />
+
+    <!-- Content -->
+    <div class="relative mx-auto max-w-5xl px-6 text-white">
+        <h1 class="text-4xl md:text-7xl font-bold tracking-tight text-center text-outline">
+        Cassidy Montgomery
+        </h1>
+    </div>
+    <div class="absolute bottom-3 left-1/2 -translate-x-1/2">
+        <a
+  href="https://www.instagram.com/_cassies_collections_?igsh=YmVxYWdhNXE5Zzk0"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="inline-flex items-center gap-3 md:text-xl text-white hover:text-pink-400 transition icon-shadow-ultra"
+>
+  <span class="inline-flex items-center justify-center rounded-full bg-white p-1">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="black"
+    stroke-width="2.2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    class="h-6 w-6 md:h-8 md:w-8"
+  >
+    <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+    <circle cx="12" cy="12" r="4" />
+    <circle cx="17.2" cy="6.8" r="1" />
+  </svg>
+</span>
+
+  <span class="text-outline">@_cassies_collections_</span>
+</a>
+    </div>
+    </header>
+
+  <!-- =========================
+       2) MAIN PAGE WRAPPER
+       =========================
+       - space-y-10 adds vertical spacing between sections automatically
+  -->
+  <main class="mx-auto max-w-8xl px-6 py-10 space-y-10">
+
+    <!-- =========================
+         3) ABOUT ME SECTION
+         ========================= -->
+    <section id="about" class="bg-white rounded-2xl shadow p-6 md:p-8">
+  <div class="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+
+    <!-- Profile photo (circle crop) -->
+    <div class="flex justify-center md:justify-start">
+      <div class="h-32 w-32 md:h-44 md:w-44 rounded-full overflow-hidden ring-4 ring-pink-200 shadow-md">
+        <img
+          src="cassprofile1.jpg"
+          alt="Cassidy"
+          class="h-full w-full object-cover object-center"
+        />
+      </div>
+    </div>
+
+    <!-- Text content -->
+    <div class="flex-1 text-center md:text-left">
+      <h2 class="text-2xl font-semibold">About Me</h2>
+
+      <p class="mt-3 text-gray-700 leading-relaxed">
+        This section is a temporary placeholder used to visualize how text content will appear within the layout of the page. It is intended to represent a typical “About Me” paragraph without conveying specific personal details. The purpose of this text is to test spacing, alignment, line length, and overall readability across different screen sizes and devices.
+
+The content here mimics the structure of a real biography, including multiple sentences and paragraphs, to ensure the design feels balanced and complete. It allows for evaluating how headings, body text, and supporting elements interact visually when placed alongside an image. This makes it easier to assess whether the section feels too dense, too sparse, or appropriately proportioned.
+      </p>
+
+      <!-- Skills "pills" -->
+      <div class="mt-5 flex flex-wrap gap-2 justify-center md:justify-start">
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">Adobe Photoshop</span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">Adobe Illustrator</span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">Adobe Acrobat</span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">Adobe InDesign</span>
+        <span class="px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm">Procreate</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- =========================
+         4) SECTION WHERE YOU ADD ELEMENTS (PROJECT CARDS)
+         ========================= -->
+    <section id="work" class="bg-white rounded-2xl shadow p-6 md:p-8">
+
+      <!-- Title row -->
+      <div class="flex items-center justify-between gap-4">
+        <h2 class="text-2xl font-semibold">Design Filters</h2>
+      </div>
+
+      <!--
+        Grid notes:
+        - grid-cols-1: 1 column on phones
+        - md:grid-cols-2: 2 columns on medium screens
+        - lg:grid-cols-3: 3 columns on large screens
+      -->
+      <div class="relative mt-6">
+
+  <!-- Back button -->
+  <button
+    id="scrollPrev"
+    type="button"
+    class="absolute left-2 top-16 md:top-10 z-10
+       bg-white/90 hover:bg-white shadow-lg rounded-full
+       h-10 w-10 flex items-center justify-center transition"
+    aria-label="Previous"
+  >
+    ←
+  </button>
+
+  <!-- Next button -->
+  <button
+    id="scrollNext"
+    type="button"
+    class="absolute right-2 top-16 md:top-10 z-10
+       bg-white/90 hover:bg-white shadow-lg rounded-full
+       h-10 w-10 flex items-center justify-center transition"
+    aria-label="Next"
+  >
+    →
+  </button>
+
+  <!-- Scroller track -->
+  <div
+    id="categoryScroller"
+    class="flex gap-6 overflow-x-hidden pb-2 px-14"
+  >
+
+    <!-- ===== KEEP YOUR EXISTING <article> CARDS EXACTLY AS THEY ARE BELOW ===== -->
+
+    <article data-tag="graphic" class="filter-card snap-start shrink-0 w-full md:w-[48%] lg:w-[32%] rounded-xl border border-gray-200 p-5 bg-white hover:shadow-md transition">
+  <h3 class="text-lg font-semibold">Graphic Design</h3>
+  <p class="mt-2 text-sm text-gray-600">
+    Visual design work focused on layout, typography, color, and composition across digital and print formats.
+  </p>
+</article>
+
+<article data-tag="painting" class="filter-card snap-start shrink-0 w-full md:w-[48%] lg:w-[32%] rounded-xl border border-gray-200 p-5 bg-white hover:shadow-md transition">
+  <h3 class="text-lg font-semibold">Painting</h3>
+  <p class="mt-2 text-sm text-gray-600">
+    Traditional and experimental painted works exploring color, texture, and expressive technique.
+  </p>
+</article>
+
+<article data-tag="drawing" class="filter-card snap-start shrink-0 w-full md:w-[48%] lg:w-[32%] rounded-xl border border-gray-200 p-5 bg-white hover:shadow-md transition">
+  <h3 class="text-lg font-semibold">Drawing</h3>
+  <p class="mt-2 text-sm text-gray-600">
+    Hand-drawn works using a variety of materials to explore form, line, and composition.
+  </p>
+</article>
+
+<article data-tag="print" class="filter-card snap-start shrink-0 w-full md:w-[48%] lg:w-[32%] rounded-xl border border-gray-200 p-5 bg-white hover:shadow-md transition">
+  <h3 class="text-lg font-semibold">Printmaking</h3>
+  <p class="mt-2 text-sm text-gray-600">
+    Reproducible artwork created through techniques such as relief, screen, or experimental printing.
+  </p>
+</article>
+
+<article data-tag="illustration" class="filter-card snap-start shrink-0 w-full md:w-[48%] lg:w-[32%] rounded-xl border border-gray-200 p-5 bg-white hover:shadow-md transition">
+  <h3 class="text-lg font-semibold">Illustration</h3>
+  <p class="mt-2 text-sm text-gray-600">
+    Image-based storytelling created to support concepts, narratives, or visual communication.
+  </p>
+</article>
+
+<article data-tag="mixed media" class="filter-card snap-start shrink-0 w-full md:w-[48%] lg:w-[32%] rounded-xl border border-gray-200 p-5 bg-white hover:shadow-md transition">
+  <h3 class="text-lg font-semibold">Mixed Media</h3>
+  <p class="mt-2 text-sm text-gray-600">
+    Artwork combining multiple materials and techniques to create layered visual compositions.
+  </p>
+</article>
+
+<article data-tag="sculpture" class="filter-card snap-start shrink-0 w-full md:w-[48%] lg:w-[32%] rounded-xl border border-gray-200 p-5 bg-white hover:shadow-md transition">
+  <h3 class="text-lg font-semibold">Sculpture</h3>
+  <p class="mt-2 text-sm text-gray-600">
+    Three-dimensional works exploring form, space, and material through physical construction.
+  </p>
+</article>
+
+<article data-tag="collage" class="filter-card snap-start shrink-0 w-full md:w-[48%] lg:w-[32%] rounded-xl border border-gray-200 p-5 bg-white hover:shadow-md transition">
+  <h3 class="text-lg font-semibold">Collage</h3>
+  <p class="mt-2 text-sm text-gray-600">
+    Compositions created by assembling diverse materials into a single cohesive visual piece.
+  </p>
+</article>
+
+<article data-tag="mural" class="filter-card snap-start shrink-0 w-full md:w-[48%] lg:w-[32%] rounded-xl border border-gray-200 p-5 bg-white hover:shadow-md transition">
+  <h3 class="text-lg font-semibold">Mural Art</h3>
+  <p class="mt-2 text-sm text-gray-600">
+    Large-scale artwork designed for walls or public spaces, emphasizing impact and environment.
+  </p>
+</article>
+
+<article data-tag="photography" class="filter-card snap-start shrink-0 w-full md:w-[48%] lg:w-[32%] rounded-xl border border-gray-200 p-5 bg-white hover:shadow-md transition">
+  <h3 class="text-lg font-semibold">Photography</h3>
+  <p class="mt-2 text-sm text-gray-600">
+    Scenic and conceptual captures designed to encapsulate emotions and ideas.
+  </p>
+</article>
+
+  </div>
+      
+ <div class="flex items-center justify-between mb-6">
+  <h2 class="text-2xl font-semibold">Gallery</h2>
+
+  <a
+    href="/add.html"
+    class="inline-flex items-center justify-center
+           h-10 w-10 rounded-xl
+           bg-black text-white text-2xl leading-none
+           hover:bg-gray-800 transition"
+    aria-label="Add artwork"
+  >
+    +
+  </a>
+</div>
+
+  <div id="imageGallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center">
+</div>
+    <!-- Images will be injected here -->
+  </div>
+</section>
+
+    <!-- =========================
+         5) CONTACT / FOOTER
+         ========================= -->
+    <section id="contact" class="text-center text-gray-600 pb-6">
+      <p class="font-medium text-gray-800">Contact</p>
+      <p class="mt-2">
+        <a class="text-blue-600 hover:underline" href="mailto:you@email.com">cassidymontgomery25@email.com</a>
+        <span class="mx-2 text-gray-400">•</span>
+        <a class="text-blue-600 hover:underline" href="https://www.linkedin.com/in/cassidylmontgomery/" target="_blank">LinkedIn</a>
+        <span class="mx-2 text-gray-400">•</span>
+        <a class="text-blue-600 hover:underline" href="https://www.instagram.com/_cassies_collections_?igsh=YmVxYWdhNXE5Zzk0" target="_blank">Instagram</a>
+      </p>
+    </section>
+
+  </main>
+
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const scroller = document.getElementById("categoryScroller");
+    const nextBtn = document.getElementById("scrollNext");
+    const prevBtn = document.getElementById("scrollPrev");
+    if (!scroller || !nextBtn || !prevBtn) return;
+
+    function stepSize() {
+      const cards = scroller.children;
+      if (!cards.length) return 0;
+
+      const gap = 24; // Tailwind gap-6
+      const cardWidth = cards[0].offsetWidth + gap;
+      const step = window.innerWidth >= 1024 ? 3 : 1; // desktop vs mobile
+      return cardWidth * step;
+    }
+
+    nextBtn.addEventListener("click", () => {
+      scroller.scrollBy({ left: stepSize(), behavior: "smooth" });
+    });
+
+    prevBtn.addEventListener("click", () => {
+      scroller.scrollBy({ left: -stepSize(), behavior: "smooth" });
+    });
+  });
+</script>
+
+<script>
+  const galleryFolder = "/Artworks/";
+  const listFile = "artworks.txt";
+  const SEP = "|";
+
+  let ALL_ITEMS = [];
+  let activeTag = null;
+
+  function normalizeTag(t) {
+    return (t || "").trim().toLowerCase();
+  }
+
+  function renderGallery(tag = null) {
+    const container = document.getElementById("imageGallery");
+    if (!container) return;
+    container.innerHTML = "";
+
+    const useTag = tag ? normalizeTag(tag) : null;
+
+    const items = useTag
+      ? ALL_ITEMS.filter(it => it.tags.includes(useTag))
+      : ALL_ITEMS;
+
+    items.forEach(it => {
+      const card = document.createElement("article");
+      card.className = "bg-white rounded-2xl shadow p-4";
+
+      const img = document.createElement("img");
+        img.src = galleryFolder + encodeURIComponent(it.file);
+        img.alt = it.title;
+        img.className = "w-full h-auto rounded-xl";
+
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.fetchPriority = "low";
+
+      const h3 = document.createElement("h3");
+      h3.className = "mt-3 text-lg font-semibold";
+      h3.textContent = it.title;
+
+      const tagWrap = document.createElement("div");
+      tagWrap.className = "mt-2 flex flex-wrap gap-2";
+      it.tags.forEach(t => {
+        const pill = document.createElement("span");
+        pill.className = "text-xs px-2 py-1 rounded-full bg-gray-100 text-gray-700";
+        pill.textContent = t;
+        tagWrap.appendChild(pill);
+      });
+
+      const p = document.createElement("p");
+      p.className = "mt-2 text-sm text-gray-600";
+      p.textContent = it.desc;
+
+      card.appendChild(img);
+      card.appendChild(h3);
+      if (it.tags.length) card.appendChild(tagWrap);
+      if (it.desc) card.appendChild(p);
+
+      container.appendChild(card);
+    });
+  }
+
+  function setActiveFilter(tagOrNull) {
+    activeTag = tagOrNull ? normalizeTag(tagOrNull) : null;
+
+    // highlight selected filter card
+    document.querySelectorAll(".filter-card").forEach(card => {
+      const t = normalizeTag(card.dataset.tag);
+      const selected = activeTag && t === activeTag;
+
+      card.classList.toggle("ring-2", selected);
+      card.classList.toggle("ring-pink-400", selected);
+      card.classList.toggle("shadow-lg", selected);
+    });
+
+    renderGallery(activeTag);
+  }
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    // Load + parse artworks.txt
+    try {
+      const res = await fetch(listFile);
+      if (!res.ok) throw new Error("Could not load " + listFile);
+      const text = await res.text();
+
+      const lines = text
+        .split("\n")
+        .map(l => l.trim())
+        .filter(Boolean)
+        .filter(l => !l.startsWith("#"));
+
+      ALL_ITEMS = lines.map(line => {
+  const parts = line.split(SEP).map(p => p.trim());
+
+  const file = parts[0];
+  const title = parts[1] || file;
+
+  const tags = (parts[2] || "")
+    .split(",")
+    .map(normalizeTag)
+    .filter(Boolean);
+
+  const desc = parts[3] || "";
+
+  // timestamp is the 5th field
+  const timestampStr = parts[4] || "";
+  const date = timestampStr ? new Date(timestampStr.replace(" ", "T")) : new Date(0);
+
+  return { file, title, tags, desc, date };
+}).filter(it => it.file);
+
+// Sort newest → oldest
+ALL_ITEMS.sort((a, b) => b.date - a.date);
+
+      // Render default: everything
+      renderGallery(null);
+
+    } catch (err) {
+      console.error(err);
+    }
+
+    // Hook filter card clicks
+    document.querySelectorAll(".filter-card").forEach(card => {
+      card.style.cursor = "pointer";
+
+      card.addEventListener("click", () => {
+        const tag = normalizeTag(card.dataset.tag);
+
+        // clicking same tag toggles back to "all"
+        if (activeTag === tag) {
+          setActiveFilter(null);
+        } else {
+          setActiveFilter(tag);
+        }
+      });
+    });
+  });
+</script>
+
+
+
+</body>
+</html>

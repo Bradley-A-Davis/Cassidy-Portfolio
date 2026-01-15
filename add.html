@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Add Artwork</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gray-100 p-6">
+  <main class="mx-auto max-w-xl bg-white rounded-2xl shadow p-6">
+    <div class="flex items-center justify-between">
+      <h1 class="text-2xl font-semibold">Add Artwork</h1>
+      <a href="/index.html" class="text-sm text-blue-600 hover:underline">Back</a>
+    </div>
+
+    <form class="mt-6 space-y-4" action="/upload.php" method="POST" enctype="multipart/form-data">
+      <label class="block">
+        <span class="text-sm font-medium">Image file</span>
+        <input name="file" type="file" accept="image/*" required class="mt-1 block w-full" />
+      </label>
+
+      <label class="block">
+        <span class="text-sm font-medium">Title</span>
+        <input name="title" type="text" class="mt-1 w-full rounded-lg border p-2" />
+      </label>
+
+      <label class="block">
+  <span class="text-sm font-medium">Tags</span>
+
+  <div class="mt-2 grid grid-cols-2 sm:grid-cols-3 gap-2">
+    <label class="flex items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+      <input type="checkbox" name="tags[]" value="graphic" class="h-4 w-4">
+      <span class="text-sm">Graphic</span>
+    </label>
+
+    <label class="flex items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+      <input type="checkbox" name="tags[]" value="painting" class="h-4 w-4">
+      <span class="text-sm">Painting</span>
+    </label>
+
+    <label class="flex items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+      <input type="checkbox" name="tags[]" value="drawing" class="h-4 w-4">
+      <span class="text-sm">Drawing</span>
+    </label>
+
+    <label class="flex items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+      <input type="checkbox" name="tags[]" value="print" class="h-4 w-4">
+      <span class="text-sm">Print</span>
+    </label>
+
+    <label class="flex items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+      <input type="checkbox" name="tags[]" value="illustration" class="h-4 w-4">
+      <span class="text-sm">Illustration</span>
+    </label>
+
+    <label class="flex items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+      <input type="checkbox" name="tags[]" value="mixed media" class="h-4 w-4">
+      <span class="text-sm">Mixed Media</span>
+    </label>
+
+    <label class="flex items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+      <input type="checkbox" name="tags[]" value="sculpture" class="h-4 w-4">
+      <span class="text-sm">Sculpture</span>
+    </label>
+
+    <label class="flex items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+      <input type="checkbox" name="tags[]" value="collage" class="h-4 w-4">
+      <span class="text-sm">Collage</span>
+    </label>
+
+    <label class="flex items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+      <input type="checkbox" name="tags[]" value="mural" class="h-4 w-4">
+      <span class="text-sm">Mural</span>
+    </label>
+
+    <label class="flex items-center gap-2 bg-gray-50 border rounded-lg px-3 py-2">
+      <input type="checkbox" name="tags[]" value="photography" class="h-4 w-4">
+      <span class="text-sm">Photography</span>
+    </label>
+  </div>
+
+  <p class="mt-2 text-xs text-gray-500">Pick one or more.</p>
+</label>
+
+      <label class="block">
+        <span class="text-sm font-medium">Description</span>
+        <textarea name="desc" rows="4" class="mt-1 w-full rounded-lg border p-2"></textarea>
+      </label>
+
+      <button type="submit"
+        class="w-full rounded-xl bg-pink-500 text-white py-2 hover:bg-pink-600 transition">
+        Upload
+      </button>
+
+      <p class="text-xs text-gray-500">
+        Date/time is added automatically by the server.
+      </p>
+    </form>
+  </main>
+</body>
+</html>
